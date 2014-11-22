@@ -1,0 +1,16 @@
+    <div class="question-panel">Q. {{index}}: {{statement}}</div>
+	<hr>
+	<div class="options-panel">
+		
+		{{#each option in options}}
+		<label>
+        	{{view 'inputs/radio' class="option-radio" style="margin-right: 10px;margin-bottom: 5px;" name="ansOption" selectionBinding="selectedOption" value=option.index}}
+        	{{option.statement}}
+    	</label>
+		{{/each}}
+	</div>
+	<br/><br/><br/><br/><br/>
+    <hr>
+	&nbsp;&nbsp;&nbsp;<button class="btn btn-success" {{action 'submit' selectedOption this}}>Submit Answer</button>&nbsp;&nbsp;&nbsp;
+	<button class="btn btn-warning" {{action 'markForReview' selectedOption this}}>Mark For Review & Next</button>
+	<button class="btn btn-default pull-right" style="margin-right:10px;" {{action 'clearResponse' selectedOption this}}>Clear Response</button>

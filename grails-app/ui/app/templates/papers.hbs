@@ -1,0 +1,8 @@
+    <div class="container-fluid height-500">
+        <ul class="sub-menu">
+			{{#each paper in model}}
+				{{#link-to 'paper' paper.id tagName="li" href=false}}{{paper.title}}{{/link-to}}
+			{{/each}}
+        </ul>
+		{{outlet}}
+	</div>

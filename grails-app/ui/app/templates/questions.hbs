@@ -1,0 +1,11 @@
+	<td class="width_75per valign-top" style="padding-right: 10px;">{{outlet}}</td>
+	<td class=" valign-top" style="padding: 5px 10px 0px 15px; border-left: 1px solid lightgray;">
+	<div class="status-bar">Time left: {{refresh secondsViewed}}</div>
+	<div class="status-bar">{{controllers.paper.title}}</div> 
+	<hr/>
+		<ul class="questions-navbar">
+			{{#each question in controller}}
+				 {{#link-to 'question' question.id class=statusClass tagName="li" href=false}}{{question.index}}{{/link-to}}
+			{{/each}}
+		</ul>
+	</td>
